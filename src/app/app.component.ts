@@ -1,16 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { HeaderComponent } from './components/header/header.component';
+import { PrimaryButtonComponent } from "./components/primary-button/primary-button.component";
+import { ProductsListComponent } from './pages/products-list/products-list.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [HeaderComponent , RouterOutlet],
   template: `
-    <h1>Welcome to {{title}}!</h1>
+  
 
-    <router-outlet />
-  `,
+    <app-header />
+<router-outlet /> 
+      
+    `,
   styles: [],
 })
 export class AppComponent {
-  title = 'ecomerce';
+  title =signal( 'ecomerce');
 }
